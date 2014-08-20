@@ -1,0 +1,529 @@
+<!DOCTYPE html><html><head><meta charset="utf-8"><style>/* Fonts */
+@font-face{
+  font-family: octicons-anchor;
+  src: url(data:font/woff;charset=utf-8;base64,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) format('woff');
+}
+
+@font-face{
+  font-family: fontawesome-mini;
+  src: url(data:font/woff;charset=utf-8;base64,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) format('woff');
+}
+
+/* Body */
+html { font-size: 100%; overflow-y: scroll; -webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; }
+
+body{
+  color:#4d4d4c;
+  font-family:Georgia, Palatino, 'Palatino Linotype', Times, 'Times New Roman',
+              "Hiragino Sans GB", "STXihei", "微软雅黑", serif;
+  font-size:12px;
+  line-height:1.5em;
+  background:#fefefe;
+  width: 45em;
+  margin: 10px auto;
+  padding: 30px;
+  border: 1px solid #ddd;
+  outline: 1300px solid #f8f8f8;
+}
+
+/* Links */
+a{ color: #06d; text-decoration:none; }
+a:hover{ color: #06e; text-decoration: underline; }
+a:active{ color:#faa700; }
+a:focus{ outline: thin dotted; }
+a:hover, a:active{ outline: 0; }
+
+::-moz-selection { background:#a8d1ff; color:#000 }
+::selection { background:#a8d1ff; color:#000 }
+
+a::-moz-selection { background:#a8d1ff; color:#0645ad }
+a::selection { background:#a8d1ff; color:#0645ad }
+
+/* Header Anchor Links*/
+.headeranchor-link {
+  color:#111;
+  border: 0;
+  margin-left: -20px;
+  padding-right: 6px;
+  cursor: pointer;
+  position: absolute;
+  display: block;
+  top: 0;
+  left: 0;
+  bottom: 0;
+}
+
+.headeranchor {
+  font: normal normal 16px octicons-anchor;
+  line-height: 1;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.headeranchor-link:hover,
+.headeranchor-link:visited,
+.headeranchor-link:active
+{ text-decoration: none; color:#4d4d4c; }
+.headeranchor-link:hover .headeranchor:before,
+h1:hover .headeranchor:before,
+h2:hover .headeranchor:before,
+h3:hover .headeranchor:before,
+h4:hover .headeranchor:before,
+h5:hover .headeranchor:before,
+h6:hover .headeranchor:before
+{ content: '\f05c'; }
+
+abbr { cursor: pointer; }
+
+/* Paragraphs */
+p { margin:1em 0; }
+
+/* Images */
+img {
+  max-width:100%;
+  border: 0;
+  -ms-interpolation-mode: bicubic;
+  vertical-align: middle;
+}
+
+/* Headers */
+h1,h2,h3,h4,h5,h6 {
+  font-weight:normal;
+  color:#111;
+  line-height: 1.7;
+  position: relative;
+}
+h4,h5,h6{ font-weight: bold; }
+h1 { font-size:2.5em; border-bottom: 1px solid #ddd;}
+h2 { font-size:2em; border-bottom:1px solid #eee; padding-bottom: 5px; }
+h3 { font-size:1.5em; }
+h4 { font-size:1.2em; }
+h5 { font-size:1em; }
+h6 { font-size:0.9em; }
+
+/* Block Quotes */
+blockquote {
+  color:#666666;
+  margin:0;
+  padding-left: 3em;
+  border-left: 0.5em #EEE solid;
+}
+hr { display: block; height: 2px; border: 0; border-top: 1px solid #aaa;border-bottom: 1px solid #eee; margin: 1em 0; padding: 0; }
+
+/* Raw Blocks */
+pre, code, kbd, samp {
+  color: #000;
+  font-family: Consolas, "Liberation Mono", Menlo, Courier, monospace;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+  font-size: 0.88em;
+  background-color: #F8F8F8;
+  border: 1px solid #CCC;
+}
+
+pre {
+  padding: 10px;
+  overflow: auto;
+}
+
+code { padding: 0 3px 0 3px; }
+pre code { border: 0; padding: 0; }
+
+/* Admonition */
+.admonition {
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+  font-size: 0.88em;
+  padding: 0.5em 1em 0.5em 1em;
+  margin: 10px auto;
+  color: #888888;
+  background-color: #F8F8F8;
+  border: 1px solid #888888;
+}
+
+.admonition p { padding: 0; margin: 0; }
+.admonition-title { font-weight: bold; margin: 0; }
+
+.admonition-icon {
+  font: normal normal 16px fontawesome-mini;
+  line-height: 1.5;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  float: left;
+}
+
+.admonition.attention { color: #4F8A10; background-color: #DFF2BF; border: 1px solid #4F8A10; }
+.admonition.caution { color: #D63301; background-color: #FFCCBA; border: 1px solid #D63301; }
+.admonition.hint { color: #00529B; background-color: #BDE5F8; border: 1px solid #00529B; }
+.admonition.danger { color: #D8000C; background-color: #FFBABA; border: 1px solid #D8000C; }
+.admonition.question { color: #00049b; background-color: #BDC8F8; border: 1px solid #00049b; }
+.admonition.note { color: #9F6000; background-color: #FEEFB3; border: 1px solid #9F6000; }
+
+.attention > .admonition-icon:before { content: "\f058\00a0"; }
+.caution > .admonition-icon:before { content: "\f06a\00a0"; }
+.hint > .admonition-icon:before { content: "\f05a\00a0"; }
+.danger > .admonition-icon:before { content: "\f056\00a0"; }
+.question > .admonition-icon:before { content: "\f059\00a0"; }
+.note > .admonition-icon:before { content: "\f040\00a0"; }
+
+/* progress bar*/
+.progress {
+  display: block;
+  width: 300px;
+  margin: 10px 0;
+  height: 24px;
+  border: 1px solid #ccc;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+  background-color: #F8F8F8;
+  position: relative;
+  box-shadow: inset -1px 1px 3px rgba(0, 0, 0, .1);
+}
+
+.progress-label {
+  position: absolute;
+  text-align: center;
+  font-weight: bold;
+  width: 100%; margin: 0;
+  line-height: 24px;
+  color: #333;
+  text-shadow:
+    1px 1px 0px #fefefe,
+    -1px -1px 0px #fefefe,
+    -1px 1px 0px #fefefe,
+    1px -1px 0px #fefefe,
+    0px 1px 0px #fefefe,
+    0px -1px 0px #fefefe,
+    1px 0px 0px #fefefe,
+    -1px 0px 0px #fefefe,
+    1px 1px 2px #000;
+  -webkit-font-smoothing: antialiased !important;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.progress-bar {
+  height: 24px;
+  float: left;
+  border-right: 1px solid #ccc;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+  background-color: #34c2e3;
+  box-shadow: inset 0 1px 0px rgba(255, 255, 255, .5);
+  background-size: 30px 30px;
+  background-image: -webkit-linear-gradient(
+    135deg,
+    rgba(255, 255, 255, .4) 27%, transparent 27%,
+    transparent 53%, rgba(255, 255, 255, .4) 53%,
+    rgba(255, 255, 255, .4) 77%, transparent 77%,
+    transparent
+  );
+  background-image: -moz-linear-gradient(
+    135deg,
+    rgba(255, 255, 255, .4) 27%, transparent 27%,
+    transparent 53%, rgba(255, 255, 255, .4) 53%,
+    rgba(255, 255, 255, .4) 77%, transparent 77%,
+    transparent
+  );
+  background-image: -ms-linear-gradient(
+    135deg,
+    rgba(255, 255, 255, .4) 27%, transparent 27%,
+    transparent 53%, rgba(255, 255, 255, .4) 53%,
+    rgba(255, 255, 255, .4) 77%, transparent 77%,
+    transparent
+  );
+  background-image: -o-linear-gradient(
+    135deg,
+    rgba(255, 255, 255, .4) 27%, transparent 27%,
+    transparent 53%, rgba(255, 255, 255, .4) 53%,
+    rgba(255, 255, 255, .4) 77%, transparent 77%,
+    transparent
+  );
+  background-image: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, .4) 27%, transparent 27%,
+    transparent 53%, rgba(255, 255, 255, .4) 53%,
+    rgba(255, 255, 255, .4) 77%, transparent 77%,
+    transparent
+  );
+}
+
+.progress-100plus .progress-bar { background-color: #1ee038; }
+.progress-80plus .progress-bar { background-color: #86e01e; }
+.progress-60plus .progress-bar { background-color: #f2d31b; }
+.progress-40plus .progress-bar { background-color: #f2b01e; }
+.progress-20plus .progress-bar { background-color: #f27011; }
+.progress-0plus .progress-bar { background-color: #f63a0f; }
+
+.gloss .progress-bar {
+  box-shadow:
+    inset -1px 1px 0px rgba(255, 255, 255, .5),
+    inset 0 -4px 12px rgba(255, 255, 255, .7),
+    inset 0 4px 12px rgba(255, 255, 255, .7),
+    inset 0 -12px 0px rgba(0, 0, 0, .05),
+    inset 1px -1px 0px rgba(255, 255, 255, .2);
+}
+
+.candystripe-animate .progress-bar{
+  -webkit-animation: animate-stripes 3s linear infinite;
+  -moz-animation: animate-stripes 3s linear infinite;
+  animation: animate-stripes 3s linear infinite;
+}
+
+@-webkit-keyframes animate-stripes { 0% { background-position: 0 0; } 100% { background-position: 60px 0; } }
+@-moz-keyframes animate-stripes { 0% { background-position: 0 0; } 100% { background-position: 60px 0; } }
+@keyframes animate-stripes { 0% { background-position: 0 0; } 100% { background-position: 60px 0; } }
+
+/* Inlines */
+b, strong { font-weight: bold; }
+
+mark { background: #ff0; color: #000; font-style: italic; font-weight: bold; }
+
+sub, sup { font-size: 75%; line-height: 0; position: relative; vertical-align: baseline; }
+sup { top: -0.5em; }
+sub { bottom: -0.25em; }
+
+dfn { font-style: italic; }
+
+/* Lists */
+ul, ol { padding-left: 30px; }
+li p:last-child { margin:0 }
+.task-list-item { list-style-type: none; }
+.task-list-item input { float:left; margin-left: -20px; margin-top: 6px; }
+dt { font-weight: bold; font-style: italic;}
+dd { margin: 0 0 0 2em; }
+
+/* Tables */
+table { width: 100%; border-collapse: collapse; overflow-x: auto; overflow-y: hidden; display: block;}
+table tr { background-color: #fefefe; }
+table tr:nth-child(2n) { background-color: #f8f8f8; }
+td, th { border: 1px solid #ddd; padding: 6px 13px; }
+
+/* Codehilite Tables */
+.codehilitetable { border: 0; border-spacing: 0; }
+.linenos, .code, .codehilitetable td { border: 0; padding: 0; }
+td:not(.linenos) .linenodiv { padding: 0 !important; }
+.code { width: 100%; }
+.linenos div pre, .linenodiv pre {
+  border: 0;
+  border-top: 1px solid #CCC;
+  border-left: 1px solid #CCC;
+  border-right: 1px solid #CCC;
+  border-bottom: 1px solid #CCC;
+  -webkit-border-radius: 0;
+  -moz-border-radius: 0;
+  border-radius: 0;
+  -webkit-border-top-left-radius: 3px;
+  -webkit-border-bottom-left-radius: 3px;
+  -moz-border-radius-topleft: 3px;
+  -moz-border-radius-bottomleft: 3px;
+  border-top-left-radius: 3px;
+  border-bottom-left-radius: 3px;
+}
+
+.code div pre {
+  border: 0;
+  border-top: 1px solid #CCC;
+  border-right: 1px solid #CCC;
+  border-bottom: 1px solid #CCC;
+  -webkit-border-radius: 0;
+  -moz-border-radius: 0;
+  border-radius: 0;
+  -webkit-border-top-right-radius: 3px;
+  -webkit-border-bottom-right-radius: 3px;
+  -moz-border-radius-topright: 3px;
+  -moz-border-radius-bottomright: 3px;
+  border-top-right-radius: 3px;
+  border-bottom-right-radius: 3px;
+}
+
+/* Media */
+@media only screen and (min-width: 480px) {
+  body{ font-size:14px; }
+}
+
+@media only screen and (min-width: 768px) {
+  body{ font-size:16px; }
+}
+
+@media print {
+  * { background: transparent !important; color: black !important; filter:none !important; -ms-filter: none !important; }
+  body{ font-size:12pt; max-width:100%; outline:none; border: 0;}
+  a, a:visited { text-decoration: underline; }
+  .headeranchor-link { display: none; }
+  hr { height: 1px; border:0; border-bottom:1px solid black; }
+  a[href]:after { content: " (" attr(href) ")"; }
+  abbr[title]:after { content: " (" attr(title) ")"; }
+  .ir a:after, a[href^="javascript:"]:after, a[href^="#"]:after { content: ""; }
+  pre { white-space: pre; white-space: pre-wrap; word-wrap: break-word; }
+  pre, blockquote { border: 1px solid #999; padding-right: 1em; page-break-inside: avoid; }
+  .progress, .progress-bar { box-shadow: none; }
+  tr, img { page-break-inside: avoid; }
+  img { max-width: 100% !important; }
+  p, h2, h3 { orphans: 3; widows: 3; }
+  h2, h3 { page-break-after: avoid; }
+}
+</style><title>chapter2</title></head><body><ol>
+<li>
+<p>语法<br />
+ 区分大小写<br />
+ 变量为弱类型                只用var运算符，可以将它初始化为任意的值<br />
+ 每行结尾的分号可有可无      编码习惯最好总加入分号，因为有些浏览器不能正确运行<br />
+ 注释和C 的注释相同          /**/  // 两种注释方法<br />
+ 括号表明代码块            </p>
+</li>
+<li>
+<p>变量<br />
+  初始化<br />
+  连续初始化：  var test=&rdquo;hi&rdquo;,age=25 test和age属于两种类型<br />
+  未初始化：    var test    变量不一定要初始化，它们可以在幕后初始化<br />
+  注意事项：    使用变量时，好的习惯是始终存放相同类型的值  </p>
+</li>
+</ol>
+<p>变量命名<br />
+  第一个字符必须为字母，下划线或者美元符<br />
+  余下的字符可以是下划线，美元符或者任何字母数字  </p>
+<p>匈牙利类型标记法：<br />
+   前缀表：<br />
+   - 数组                a<br />
+   - 布尔型              b<br />
+   - 浮点型              f<br />
+   - 函数                fn<br />
+   - 整型                i<br />
+   - 对象                o<br />
+   - 正则表达式          re<br />
+   - 字符串              s<br />
+   - 变型 ( 任何类型)    v  </p>
+<p>注意： ECMAScript 的解释程序把遇到未声明的标示符用该变量名创建一个全局变量并将其初始化为指定的值  </p>
+<ol>
+<li>
+<p>关键字<br />
+  关键字不能用作变量名和函数名  </p>
+</li>
+<li>
+<p>保留字  </p>
+</li>
+<li>
+<p>原始值和引用值<br />
+  变量可以存放两种类型的值：原始值和引用值  </p>
+<p>原始值： 存储在栈中的简单数据段    值直接存储在变量访问的位置<br />
+引用值： 存储在堆中的对象          存储在变量处的是一个指针，指针指向存储对象的内存  </p>
+</li>
+<li>
+<p>原始类型： Undefined,Null,Boolen,Number,String<br />
+  原始类型占据的空间是固定的，可以存储在较小的栈中，便于迅速查找变量的值  </p>
+</li>
+</ol>
+<p>typeof 运算符：可以判断一个值是否在某种类型的范围内<br />
+  如： typeof(2)      返回number<br />
+       typeof(null)   返回boject 这是因为 null被认为是对象的占位符 但是它是原始值  </p>
+<p>Undefined 类型：当声明的变量未初始化，该变量的默认值为 undefined<br />
+  如：var temp1;<br />
+     alert(temp1); 输出都是为 undefined<br />
+     alert(temp2); 但是temp2没有声明，用其他运算符时会引起错误<br />
+     当函数无明确返回值时，返回的是值 undefined  </p>
+<p>Null 类型：专有值 null 值undefined 由值null派生来，ECMAScript把他们定义为相等 alert(null == undefined);<br />
+　　　　　　　区别：　undefined  声明了变量但未对其初始化<br />
+                   null       尚不存在的对象        </p>
+<p>Boolen 类型：true false  </p>
+<p>Number 类型：八进制 0 十六进制 0x所以数学运算返回的都是十进制<br />
+              浮点数字面量在进行计算前是用字符串存储的<br />
+              边界：无穷大 Infinity<br />
+                   Number.NEGATIVE_INFINITY  Number.POSITIVE_INFINITY <br />
+                         -Infinity                 +Infinity<br />
+                   测试无否是有穷数 isFinit()<br />
+              特殊值NaN: 表示非数 (主要发生在类型转换时) 它和自身不相等，所以不推荐使用 NaN值, 可以使用isNaN()函数  </p>
+<p>String 类型：为唯一没有固定大小的原始类型  </p>
+<ol>
+<li>转换<br />
+  转换成字符串： Boolean值，数字和字符串都是伪对象，都有 toString()方法<br />
+                 Boolean 类型 只输出 &ldquo;true&rdquo;或者&rdquo;false&rdquo;<br />
+                 Number 类型  两种模式<br />
+                   默认模式  只输出相应字符串的数字值<br />
+                   基模式    可以用不同的基输出数字<br />
+                如  var iNum=10;<br />
+                    alert(iNum.toString(2));  </li>
+</ol>
+<p>转换成数字： 两种方法： parseInt() parseFloat() 只能对String类型调用<br />
+                parseInt()            <br />
+                从字符串0处开始测试 (不通过返回NaN) ，是有效数字则转换，直到发现非有效数字。如： parseInt(&ldquo;123abc&rdquo;) 返回123<br />
+                     parseInt() 基模式： <br />
+                     parseInt(&ldquo;AF&rdquo;,16)  返回175<br />
+                                 如果十进制前面有 0，则最好采用基数10，不然会认为是八进制<br />
+                     parseInt(&ldquo;010&rdquo;)-&gt; 8   parseInt(&ldquo;010&rdquo;,10)-&gt; 10<br />
+                parseFloat()<br />
+                从字符串0处开始测试 (不通过返回NaN) ，是有效数字则转换， 第一个出现的小数点是有效字符，把有效字符前面的转换成数字<br />
+                parseFloat() 字符串必须为十进制，而且忽略前面的 0，也没有基模式</p>
+<p>强制转换类型： 3种强制类型转换<br />
+              Boolean(value)   把给定的值转换成 Boolean类型<br />
+              Number(value)    把给定的值转换成数字<br />
+              String(value)    把给定的值转换成字符串</p>
+<pre><code>          Boolean(value):  空字符串，数字 0，undefined/null ，返回false ，其他true
+          Number(value):  Number() 转换整个字符串，如果能转换则调用 parseInt或者parseFloat 转换，不能则返回 NaN
+          String(value):   把任何值转换为字符串。它和toString不同的是：可以对 null或者undefine 强制转换
+</code></pre>
+<ol>
+<li>
+<p>引用类型<br />
+      引用类型通常叫作类，也就是处理的是对象。<br />
+     var obj = new Obeject(); 括号非必需，但是做好使用括号。</p>
+<p>Object 类：ECMAScript的所有类都由这个类继承而来，所以类的所以属性和方法都出现在其他类中<br />
+    属性： Constructor 对创建对象的函数的引用<br />
+         Prototype   对该对象的对象原型的引用 对于所有的类，默认返回 Object对象的一个实例<br />
+    方法： HasOwnProperty(property) 判断对象是否有某个特定的属性<br />
+         IsPropertyIsEnumerable(property) 判断给定的属性是否可以用 for&hellip;in枚举<br />
+         ToString   返回对象的原始字符串表示<br />
+         ValueOf    返回最适合该对象的原始值 对于许多类，该方法返回的值和 ToString一样</p>
+<p>Boolean 类: Boolean类是 Boolean类型的引用类型。<br />
+    创建： var oBooleanObject = new Boolean(true);Boolean 对象将覆盖 valueOf和ToString 方法<br />
+    建议：ECMAScript很少使用 Boolean对象，最好使用原始值</p>
+<p>Number 类： Number类是 Number类型的引用类型<br />
+    创建： var oNumberObject = new Number(55);得到原始值： valueOf()<br />
+    专用方法： toFixed() 返回具有指定位数的小数的数字的字符串<br />
+               toExponential() 返回科学计数法表示的字符串形式<br />
+               toPrecision() 　返回最有意义的数字预定形式或指数形式<br />
+               以上三种方法都要进行舍入操作<br />
+    建议：　应尽量少用这种对象，以避免发生潜在的问题。最好使用数字的原始表示法</p>
+<p>String 类： String类是 String原始类型的对象表示法<br />
+     创建： var oStringObject = new String(&ldquo;hello world&rdquo;) 得到原始值： valueOf() 和 toString() 都可以<br />
+     属性： length         返回字符串的字符个数<br />
+     方法： charAt()      访问字符串中的单个字符 返回字符<br />
+           charCodeAt()  返回的是单个字符的字符代码<br />
+           concat()      连接一个或多个字符串 保持原始字符串不变 返回String 原始值要真正改变字符串，用 + 来连接</p>
+<pre><code>       indexOf()       返回指定字符在另一字符串的位置 从开头开始检索
+       lastIndexOf()   从结尾开始检索
+
+       localeCompare() 对字符串值进行排序
+             返回值 -1  String对象按照字母顺序排在参数之前
+                   0  String对象和参数相等
+                   1  String对象按照字母顺序排在参数之后
+             判断返回值时 最好使用 &lt;0 &gt;0 来判断，因为返回值看具体实现
+
+       slice()        返回处理的字符串的字串   不改变String 对象的值
+       substring()    如： var oStr = new String(&ldquo;hello world&rdquo;);
+                          alert(oStr.slice(3)); &lsquo;lo world&rsquo;
+                          alert(oStr.substring(3,7); &lsquo;lo w&rsquo;
+                     不同点：
+                          alert(oStr.slice(-3)); &lsquo;rld&rsquo;  负数从右边向左取值
+                          alert(oStr.substring(-3);&rsquo;    hello world&rsquo; 负数当成 0处理
+
+       toLowerCase()        字符串大小写转换 locale表示特别区域实现 
+       toLocaleLowerCase()
+       toUpperCase()
+       toLocaleUpperCase()</code></pre>
+</li>
+</ol>
+<p>instanceof运算符： 在使用typeof 运算符时采用引用类型存储会出现一个问题，无论引用的是什么对象返回都是object 。而instanceof方法要求开发者明确确认对象的类型</p>
+<ol>
+<li>运算符</li>
+</ol></body></html>
