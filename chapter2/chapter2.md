@@ -1,3 +1,5 @@
+#第2章 ECMAScript基础
+
 1. 语法  
  区分大小写  
  变量为弱类型                只用var运算符，可以将它初始化为任意的值  
@@ -15,17 +17,7 @@
   第一个字符必须为字母，下划线或者美元符  
   余下的字符可以是下划线，美元符或者任何字母数字  
  
-  匈牙利类型标记法：  
-   前缀表：  
-   - 数组                a  
-   - 布尔型              b  
-   - 浮点型              f  
-   - 函数                fn  
-   - 整型                i  
-   - 对象                o  
-   - 正则表达式          re  
-   - 字符串              s  
-   - 变型 ( 任何类型)    v  
+  标记法:推荐使用Camel标记法
   
  注意： ECMAScript 的解释程序把遇到未声明的标示符用该变量名创建一个全局变量并将其初始化为指定的值  
         
@@ -37,41 +29,38 @@
 5. 原始值和引用值  
   变量可以存放两种类型的值：原始值和引用值  
 
-    原始值： 存储在栈中的简单数据段    值直接存储在变量访问的位置  
-    引用值： 存储在堆中的对象          存储在变量处的是一个指针，指针指向存储对象的内存  
+   原始值： 存储在栈中的简单数据段    值直接存储在变量访问的位置  
+   引用值： 存储在堆中的对象          存储在变量处的是一个指针，指针指向存储对象的内存   
  
-6. 原始类型： Undefined,Null,Boolen,Number,String  
+6. 原始类型： Undefined,Null,Boolen,Number,String   
   原始类型占据的空间是固定的，可以存储在较小的栈中，便于迅速查找变量的值  
+    typeof 运算符：可以判断一个值是否在某种类型的范围内 
+      如： typeof(2)      返回number  
+         typeof(null)   返回object 这是因为 null被认为是对象的占位符 但是它是原始值  
+         typeof(String) 返回function 
+      Undefined 类型：当声明的变量未初始化，该变量的默认值为 undefined  
+       如：var temp1;  
+       alert(temp1); 输出都是为 undefined  
+       alert(temp2); 但是temp2没有声明，用其他运算符时会引起错误  
+       当函数无明确返回值时，返回的是值 undefined 
+      Null 类型：专有值 null  
+        值undefined 由值null派生来，ECMAScript把他们定义为相等 alert(null == undefined);  区别：　undefined  声明了变量但未对其初始化  
+              null       尚不存在的对象        
+      Boolen 类型：true false  
+         true fae两个字面值, true > f*alse;为true  
+      Number 类型：八进制 0 十六进制 0x 数学运算返回的都是十进制  
+        浮点数字面量在进行计算前是用字符串存储的  
+        边界：无穷大 Infinity  
+            Number.NEGATIVE_INFINITY  Number.POSITIVE_INFINITY   
+               -Infinity                 +Infinity   
+            测试无否是有穷数 isFinite()    
+         特殊值NaN: 表示非数 (主要发生在类型转换时) 它和自身不相等，所以不推荐使用NaN值, 可以使用isNaN()函数    
+       String 类型：为唯一没有固定大小的原始类型 </p>
    
-  typeof 运算符：可以判断一个值是否在某种类型的范围内  
-  如： typeof(2)      返回number  
-       typeof(null)   返回boject 这是因为 null被认为是对象的占位符 但是它是原始值  
-    
-  Undefined 类型：当声明的变量未初始化，该变量的默认值为 undefined  
-  如：var temp1;  
-     alert(temp1); 输出都是为 undefined  
-     alert(temp2); 但是temp2没有声明，用其他运算符时会引起错误  
-     当函数无明确返回值时，返回的是值 undefined  
-    
-  Null 类型：专有值 null 值undefined 由值null派生来，ECMAScript把他们定义为相等 alert(null == undefined);  
-　　　　　　　区别：　undefined  声明了变量但未对其初始化  
-                   null       尚不存在的对象        
-   
-  Boolen 类型：true false  
-   
-  Number 类型：八进制 0 十六进制 0x所以数学运算返回的都是十进制  
-              浮点数字面量在进行计算前是用字符串存储的  
-              边界：无穷大 Infinity  
-                   Number.NEGATIVE_INFINITY  Number.POSITIVE_INFINITY   
-                         -Infinity                 +Infinity  
-                   测试无否是有穷数 isFinit()  
-              特殊值NaN: 表示非数 (主要发生在类型转换时) 它和自身不相等，所以不推荐使用 NaN值, 可以使用isNaN()函数  
-    
-  String 类型：为唯一没有固定大小的原始类型  
-   
-7. 转换
-  转换成字符串： Boolean值，数字和字符串都是伪对象，都有 toString()方法  
-                 Boolean 类型 只输出 "true"或者"false"  
+
+7. 转换  
+   转换成字符串： Boolean值，数字和字符串都是伪对象，都有 toString()方法  
+                 Boolean 类型 只输出 "true"或者"false"  P
                  Number 类型  两种模式  
                    默认模式  只输出相应字符串的数字值  
                    基模式    可以用不同的基输出数字  
@@ -90,13 +79,13 @@
                 parseFloat() 字符串必须为十进制，而且忽略前面的 0，也没有基模式
   
  强制转换类型： 3种强制类型转换
-              Boolean(value)   把给定的值转换成 Boolean类型
-              Number(value)    把给定的值转换成数字
-              String(value)    把给定的值转换成字符串
+    - Boolean(value)   把给定的值转换成 Boolean类型
+    - Number(value)    把给定的值转换成数字
+    - String(value)    把给定的值转换成字符串
                     
-              Boolean(value):  空字符串，数字 0，undefined/null ，返回false ，其他true
-              Number(value):  Number() 转换整个字符串，如果能转换则调用 parseInt或者parseFloat 转换，不能则返回 NaN
-              String(value):   把任何值转换为字符串。它和toString不同的是：可以对 null或者undefine 强制转换
+    - Boolean(value):  空字符串，数字 0，undefined/null ，返回false ，其他true
+    - Number(value):  Number() 转换整个字符串，如果能转换则调用 parseInt或者parseFloat 转换，不能则返回 NaN
+    - String(value):    把任何值转换为字符串。它和toString不同的是：可以对 null或者undefine 强制转换
 
 8. 引用类型
       引用类型通常叫作类，也就是处理的是对象。
@@ -154,3 +143,5 @@
 instanceof运算符： 在使用typeof 运算符时采用引用类型存储会出现一个问题，无论引用的是什么对象返回都是object 。而instanceof方法要求开发者明确确认对象的类型
 
 9. 运算符
+
+##总结
