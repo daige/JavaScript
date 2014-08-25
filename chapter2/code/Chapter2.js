@@ -65,5 +65,54 @@ alert(typeof f);
 
 alert(isFinite(f*20000));
 alert(isNaN("daige"));
-*/
+
+
+var str1 = "你 好";
+var str2 = "daig\"e";
+var str3 = 'd';
+
+alert(str1);
+alert(str2);
+alert(str3);
+
+
+//转换
+var num = 10;
+alert(num.toString());
+var isTrue = true;
+alert(isTrue.toString());
+var strTest = "daige";
+alert(strTest.toString());
+
+alert(num.toString(16));
+
+
+alert(parseInt("123daige"));
+alert(parseInt("13",16));
+alert(parseInt("22.5"));
+alert(parseInt("daige"));
+alert(parseFloat("12.345"));
+
+
+alert(Boolean("daige"));
+alert(Number("23.21232"));
+alert(String(123));
+
+alert(Number("23.4.5"));
+alert(parseInt("23.4.5"));
+alert(String(null));
+alert(String(undefined));
+
+
+//引用类型
+
+var obj = new String("daige");
+alert(obj.length);
+alert(obj.charAt(1));
+alert(obj.concat(" hello"))
+alert(obj.localeCompare());
+
+var str1=new String("hi daige");
+alert(str1.substring(2));
+alert(str1.toLocaleUpperCase());*/
 
