@@ -114,5 +114,84 @@ alert(obj.localeCompare());
 
 var str1=new String("hi daige");
 alert(str1.substring(2));
-alert(str1.toLocaleUpperCase());*/
+alert(str1.toLocaleUpperCase());
 
+var test = new String("helo world");
+alert(test instanceof String);
+
+
+//运算符
+var test = new String("daige");
+test.name = "D";
+alert(test.name);
+delete test.name;
+alert(test.name);
+
+
+var str = "25";
+str = -str;
+alert(str);
+alert(typeof str);
+
+
+var num = 18;
+alert(num.toString(2)); //10010
+num = ~num;  //1*27 01101
+alert(num.toString()); 
+
+
+
+var num = 25 & 3;
+alert(num);
+
+var num = 25 | 3;
+alert(num);
+
+var num = 25 ^ 3;
+alert(num);
+
+var num = -2;
+alert(num << 5);
+
+var comp = "Block" < "about";
+alert(comp);
+
+var comp = "Block".toLowerCase() < "about".toLowerCase();
+alert(comp);
+var num = "23" < "3";
+alert(num);
+
+var num = "23" < 3;
+alert(num);
+
+var str = "55";
+var num = 55;
+alert(str == num);
+alert(str === num);
+
+
+start: var num = 0;
+var str = "bule";
+
+switch(str)
+{
+	case "blue":
+	break start;
+	
+	case "daige":
+	 var num = 100;
+	 break;
+
+	 default:
+	 var num = 50;
+}
+
+alert(num);
+
+MYLOOP: do {
+  x = x + 1;
+  if (x > 100) break MYLOOP;
+  continue MYLOOP;
+} while (0)
+
+alert(x);*/

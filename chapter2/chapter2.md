@@ -152,5 +152,19 @@
 instanceof运算符：在使用typeof   运算符时采用引用类型存储会出现一个问题，无论引用的是什么对象返回都是object   。而instanceof方法要求开发者明确确认对象的类型  
 
 9. 运算符
+   - delete　删除对以前定义的对象的属性和方法的引用
+   
+   - void     对任何值都返回undefined 常用于避免输出不应该输出的值  
+              例子：<a href="javascript:void(window.open('about:blank'))">Click Me </a>  
+
+   - 一元加法和减法  加法无影响 减法求负
+   - 无符号右移    　创建无符号数 var num = -64 >>> 0
+   - 全等号 　　　　 面对对象，无需类型转换条件下相等
+
+10. 语句  
+ 带标签的语句： start: var num = 0;
+ with语句： 用于对象的特定作用域
+ switch:    不同点是：可以用于字符串  
+
 
 ##总结
