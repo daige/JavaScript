@@ -194,4 +194,72 @@ MYLOOP: do {
   continue MYLOOP;
 } while (0)
 
-alert(x);*/
+alert(x);
+
+//函数
+function test(num1,num2)
+{
+	return num1+ num2;
+}
+
+function test1(num1)
+{
+	num3 = num1;
+}
+
+alert(test(1,2));
+
+alert(test1(1));
+
+function test()
+{
+	alert(arguments[0]);
+	alert(arguments.length);
+}
+
+alert(test("daige","hi"));
+
+function add()
+{
+	if(arguments.length == 2)
+	{
+		return arguments[0]+arguments[1];
+	}
+	else if (arguments.length == 3)
+	{
+		return arguments[0]+arguments[1]+arguments[2];
+	}
+	else
+
+		return false;
+}
+
+alert(add(1,2));
+alert(add(1,2,3));
+
+var doAdd = new Function("num1","num2","alert( num1+ num2)");
+
+function test(addFunction,num1,num2)
+{
+	addFunction(num1,num2);
+}
+
+alert(test(doAdd,1,2));
+alert(doAdd.length);
+alert(doAdd.valueOf());
+alert(doAdd.toString());
+
+var totalNum = 10;
+
+function addNum(num1,num2)
+{
+	function doAdd() //doAdd是一个闭包 它获取外部函数参数和全局变量
+	{
+		return num1+num2+totalNum;
+	}
+
+	return doAdd(); //addNum调用内部函数 闭包不接受参数，它使用的的值是从执行环境获取
+}
+
+alert(addNum(1,2));
+*/

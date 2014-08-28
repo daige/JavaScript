@@ -1,13 +1,13 @@
 #第2章 ECMAScript基础
 
-1. 语法  
+## 语法  
  区分大小写  
  变量为弱类型　　　　　　　　　只用var运算符，可以将它初始化为任意的值  
  每行结尾的分号可有可无　　　　编码习惯最好总加入分号，因为有些浏览器不能正确运行  
  注释和C的注释相同　　　　　　　/**/  // 两种注释方法  
  括号表明代码块　　        
  
-2. 变量  
+## 变量  
   初始化  
   连续初始化：　var test="hi",age=25 　　test和age属于两种类型  
   未初始化：　　var test　　变量不一定要初始化，它们可以在幕后初始化  
@@ -20,25 +20,26 @@
   标记法:推荐使用Camel标记法
   
  注意： ECMAScript 的解释程序把遇到未声明的标示符用该变量名创建一个全局变量并将其初始化为指定的值  
-        
-3. 关键字  
+  
+## 关键字  
   关键字不能用作变量名和函数名  
 
-4. 保留字  
+## 保留字  
  
-5. 原始值和引用值  
+## 原始值和引用值  
   变量可以存放两种类型的值：原始值和引用值  
 
    原始值：　存储在栈中的简单数据段　　值直接存储在变量访问的位置  
    引用值：　存储在堆中的对象          存储在变量处的是一个指针，指针指向存储对象的内存   
  
-6. 原始类型：　Undefined,Null,Boolen,Number,String   
-  原始类型占据的空间是固定的，可以存储在较小的栈中，便于迅速查找变量的值  
-      typeof 运算符：可以判断一个值是否在某种类型的范围内   
+## 原始类型
+  Undefined,Null,Boolen,Number,String   
+  原始类型占据的空间是固定的，可以存储在较小的栈中，便于迅速查找变量的值
+typeof 运算符：可以判断一个值是否在某种类型的范围内   
       如： typeof(2)　　　　返回number  
            typeof(null)　　　返回object 这是因为 null被认为是对象的占位符 但是它是原始值  
            typeof(String)　　返回function 
-  <p> 
+  
   - Undefined 类型：当声明的变量未初始化,该变量的默认值为 undefined  
        如：var temp1;  
        alert(temp1); 输出都是为 undefined  
@@ -63,27 +64,26 @@
       特殊值NaN: 表示非数 (主要发生在类型转换时)  它和自身不相等，所以不推荐使用NaN值, 可以使用isNaN()函数
 
   - String 类型：为唯一没有固定大小的原始类型  
-　 </p>
+　 
 
-7. 转换  
-   转换成字符串： Boolean值，数字和字符串都是伪对象，都有 toString()方法  
-
-      Boolean 类型 只输出 "true"或者"false"   
-      Number 类型  两种模式    
-      　默认模式　　只输出相应字符串的数字值  
-      　基模式　　　可以用不同的基输出数字  
-   　　 如  var iNum=10;  
-      　　　alert(iNum.toString(2));  
+## 转换  
+   转换成字符串： Boolean值，数字和字符串都是伪对象，都有 toString()方法
+  Boolean 类型 只输出 "true"或者"false"   
+  Number 类型  两种模式    
+  默认模式　　只输出相应字符串的数字值  
+  基模式　　　可以用不同的基输出数字  
+   如  var iNum=10;  
+      alert(iNum.toString(2));  
 
   转换成数字： 两种方法：parseInt()　parseFloat()只能对String类型调用  
-    - parseInt()              
+ - parseInt()              
       从字符串0处开始测试 (不通过返回NaN),是有效数字则转换，直到发现非有效数字。
       如：parseInt("123abc") 返回123  
       parseInt() 基模式： 
       parseInt("AF",16)  返回175  
       如果十进制前面有0，则最好采用基数10，不然会认为是八进制
                      parseInt("010")-> 8   parseInt("010",10)-> 10
-    - parseFloat()
+ - parseFloat()
       从字符串0处开始测试 (不通过返回NaN) ，是有效数字则转换， 第一个出现的小数点是有效字符，把有效字符前面的转换成数字
       parseFloat() 字符串必须为十进制，而且忽略前面的 0，也没有基模式
   
@@ -96,7 +96,7 @@
     - Number(value):　　Number() 转换整个字符串，如果能转换则调用 parseInt或者parseFloat 转换，不能则返回 NaN
     - String(value):　　　把任何值转换为字符串。它和toString不同的是：可以对 　null或者undefine 强制转换
 
-8. 引用类型
+## 引用类型
   　引用类型通常叫作类，也就是处理的是对象。  
   　var obj = new Obeject(); 括号非必需，但是最好使用括号。 
 
@@ -153,7 +153,7 @@
 
     instanceof运算符：在使用typeof运算符时采用引用类型存储会出现一个问题，无论引用的是什么对象返回都是object   。而instanceof方法要求开发者明确确认对象的类型  
 
-9. 运算符
+## 运算符
    - delete　删除对以前定义的对象的属性和方法的引用
    
    - void     对任何值都返回undefined 常用于避免输出不应该输出的值  
@@ -164,10 +164,56 @@
    - 无符号右移    　创建无符号数 var num = -64 >>> 0
    - 全等号 　　　　 面对对象，无需类型转换条件下相等
 
-10. 语句  
- 带标签的语句： start: var num = 0;  
- with语句： 用于对象的特定作用域  
- switch:　　不同点是：可以用于字符串    
+## 语句  
+   - 带标签的语句： start: var num = 0;  
+   - with语句： 用于对象的特定作用域  
+   - switch:　　不同点是：可以用于字符串    
 
+## 函数
+  - 函数无明确返回值，返回undefined
+  - JS中无函数重载，可利用函数参数的个数来模拟函数重载
+  - 函数也是引用，可以当函数参数
+  - Fuction对象的公有方法valueOf和toString，都返回函数的源代码
+     
+     <pre> <code> 
+        var doAdd = new Function("num1","num2","alert( num1+ num2)");
+        function test(addFunction,num1,num2)
+        {
+          addFunction(num1,num2);
+        }
+        alert(test(doAdd,1,2));
+        alert(doAdd.length);
+        alert(doAdd.valueOf());
+        alert(doAdd.valueOf());
+        valueOf和valueOf都返回：
+        function anonymous(num1,num2/**)
+        {
+           alert(num1+num2)
+        }
+        </code> </pre>
+
+  - 闭包 闭包就是词法表示包括不必计算的变量的函数，也就是使用了函数外定义的变量
+    
+      <pre><code>
+      var totalNum = 10;
+      function addNum(num1,num2)
+      {
+        function doAdd() //doAdd是一个闭包 它获取外部函数参数和全局变量
+        {
+           eturn num1+num2+totalNum;
+        }
+       return doAdd(); //addNum调用内部函数 闭包不接受参数，它使用的的值是从执行环境获取
+      }
+      alert(addNum(1,2));
+      </code></pre>
+      
 
 ##总结
+介绍了ECMAScript的基本语法
+- 一般语法
+- 用关键字var定义变量
+- 原始值和引用值
+- 基础的原始类型
+- 基础的引用类型
+- 运算符和语句
+- 函数
