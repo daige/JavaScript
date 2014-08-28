@@ -110,11 +110,11 @@
           ValueOf    返回最适合该对象的原始值 对于许多类，该方法返回的值和 ToString一样  
 
   - Boolean 类: Boolean类是 Boolean类型的引用类型  
-  　　创建： var oBooleanObject = new Boolean(true);Boolean 对象将覆盖 valueOf和ToString 方法  
+  　　创建： `var oBooleanObject = new Boolean(true);`Boolean 对象将覆盖 valueOf和ToString 方法  
   　　建议：ECMAScript很少使用 Boolean对象，最好使用原始值  
     
   - Number 类： Number类是 Number类型的引用类型  
-  　　创建： var oNumberObject = new Number(55);  
+  　　创建： `var oNumberObject = new Number(55);`  
               得到原始值： valueOf()  
   　　专用方法： toFixed() 返回具有指定位数的小数的数字的字符串  
       　　       toExponential() 返回科学计数法表示的字符串形式  
@@ -123,7 +123,7 @@
   　　建议：　应尽量少用这种对象，以避免发生潜在的问题。最好使用数字的原始表示法  
     
   - String 类： String类是 String原始类型的对象表示法  
-  　　创建： var oStringObject = new String("hello world")   
+  　　创建： `var oStringObject = new String("hello world")`   
              得到原始值： valueOf() 和 toString() 都可以    
   　　属性： 　length　　　　返回字符串的字符个数  
 
@@ -139,8 +139,10 @@
                 　　　判断返回值时 最好使用 <0 >0 来判断，因为返回值看具体实现
          slice()　　　　返回处理的字符串的字串   不改变String 对象的值  
          substring() 　
-             如： var oStr = new String("hello world");  
-                  alert(oStr.slice(3)); 'lo world'                            alert(oStr.substring(3,7); 'lo w'  
+             如： 
+             `var oStr = new String("hello world"); `  
+                 　　　　　 　　　`alert(oStr.slice(3)); 'lo world'`  
+                 　　　　　　　　 `alert(oStr.substring(3,7); 'lo w'`   
              不同点：  
                   alert(oStr.slice(-3)); 'rld'  负数从右边向左取值  
                   alert(oStr.substring(-3);'    hello world'负数当成 0处理  
@@ -149,22 +151,23 @@
         toUpperCase()  
         toLocaleUpperCase()  
 
-instanceof运算符：在使用typeof   运算符时采用引用类型存储会出现一个问题，无论引用的是什么对象返回都是object   。而instanceof方法要求开发者明确确认对象的类型  
+    instanceof运算符：在使用typeof运算符时采用引用类型存储会出现一个问题，无论引用的是什么对象返回都是object   。而instanceof方法要求开发者明确确认对象的类型  
 
 9. 运算符
    - delete　删除对以前定义的对象的属性和方法的引用
    
    - void     对任何值都返回undefined 常用于避免输出不应该输出的值  
-              例子：<a href="javascript:void(window.open('about:blank'))">Click Me </a>  
+              例子：
+  `<a href="javascript:void(window.open('about:blank'))">Click Me </a>`
 
    - 一元加法和减法  加法无影响 减法求负
    - 无符号右移    　创建无符号数 var num = -64 >>> 0
    - 全等号 　　　　 面对对象，无需类型转换条件下相等
 
 10. 语句  
- 带标签的语句： start: var num = 0;
- with语句： 用于对象的特定作用域
- switch:    不同点是：可以用于字符串  
+ 带标签的语句： start: var num = 0;  
+ with语句： 用于对象的特定作用域  
+ switch:　　不同点是：可以用于字符串    
 
 
 ##总结
