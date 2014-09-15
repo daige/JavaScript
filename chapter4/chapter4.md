@@ -240,5 +240,3 @@ alert(rectangle.getArea());
 
 ##小结
 - 介绍了ECMAScript中用对象冒充和原型链实现的继承。
-
-
