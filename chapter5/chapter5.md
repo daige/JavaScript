@@ -59,8 +59,8 @@ BOM的体系结构：
   完整列表请参考[Window 对象](http://www.w3school.com.cn/jsref/dom_obj_window.asp)  
 
 - document对象  
-  document对象是Window对象的一部分，可通过window.document属性对其进行访问。
-  document对象是唯一一个既属于BOM又属于DOM的对象。  
+  document对象是Window对象的一部分，可通过window.document属性对其进行访问  
+  document对象是唯一一个既属于BOM又属于DOM的对象    
   每个载入浏览器的 HTML 文档都会成为 document 对象。   
   document 对象使我们可以从脚本中对 HTML 页面中的所有元素进行访问  
 
@@ -80,8 +80,8 @@ BOM的体系结构：
   - writeln()
   - open()
   - close()  
-
-  - getElementById()  返回对拥有指定 id 的第一个对象的引用
+  
+  - getElementById()  返回对拥有指定id的第一个对象的引用
   - getElementsByName() 返回带有指定名称的对象集合
   - getElementsByTagName()  返回带有指定标签名的对象集合
 
@@ -118,7 +118,8 @@ BOM的体系结构：
   - platform  返回运行浏览器的操作系统平台。
   - systemLanguage  返回 OS 使用的默认语言。
   - userAgent 返回由客户机发送服务器的 user-agent 头部的值。
-  - userLanguage  返回 OS 的自然语言设置。
+  - userLanguage  返回 OS 的自然语言设置  
+
 运用navigator对象对检测浏览器类型非常有用。  
 
 - screen对象  
