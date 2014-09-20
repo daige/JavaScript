@@ -24,6 +24,8 @@
   `<object data="chapter5.svg" width="300" height="100" type="image/svg+xml" />`
 - `<iframe>`  
   `<iframe src="chapter5.svg" width="300" height="100"></iframe>`
+
+详细内容阅读[SVG 图像](http://javascript.ruanyifeng.com/htmlapi/svg.html)
   
 
 ##BOM
@@ -134,6 +136,4 @@ BOM的体系结构：
   
 ##小结
 - 介绍了把JS加入到HTML中
-- 介绍了XHTML的差别
-- SVG中的JavaScript
 - 介绍了BOM和它提供的对象
